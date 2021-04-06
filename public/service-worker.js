@@ -1,18 +1,15 @@
 const FILES_TO_CACHE = [
     '/',
-    '/index.html',
     '/db.js',
+    '/index.html',
     '/styles.css',
-    '/manifest.webmanifest',
-    '/icons/icon-192x192.png',
-    '/icons/icon-512x512.png',
+    '/dist/bundle.js',
     'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
     'https://cdn.jsdelivr.net/npm/chart.js@2.8.0',
+    '/icons'
 ];
-
 const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
-
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches
@@ -21,7 +18,6 @@ self.addEventListener('install', (event) => {
             .then(self.skipWaiting())
     );
 });
-
 // The activate handler takes care of cleaning up old caches.
 self.addEventListener('activate', (event) => {
     const currentCaches = [PRECACHE, RUNTIME];
@@ -41,7 +37,6 @@ self.addEventListener('activate', (event) => {
             .then(() => self.clients.claim())
     );
 });
-
 self.addEventListener('fetch', (event) => {
     if (event.request.url.startsWith(self.location.origin)) {
         event.respondWith(
@@ -49,7 +44,6 @@ self.addEventListener('fetch', (event) => {
                 if (cachedResponse) {
                     return cachedResponse;
                 }
-
                 return caches.open(RUNTIME).then((cache) => {
                     return fetch(event.request).then((response) => {
                         return cache.put(event.request, response.clone()).then(() => {

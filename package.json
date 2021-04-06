@@ -23,12 +23,6 @@
     "express": "^4.17.1",
     "lite-server": "^2.5.3",
     "mongoose": "^5.5.15",
-    "morgan": "^1.9.1",
-    "webpack": "^5.30.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.13.14",
-    "@babel/preset-env": "^7.13.12",
-    "babel-loader": "^8.2.2"
+    "morgan": "^1.9.1"
   }
 }
