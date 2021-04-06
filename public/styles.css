@@ -24,10 +24,12 @@ tr:nth-child(even) {
 
 #add-btn {
   background-color: green;
+  color: honeydew
 } 
 
 #sub-btn {
   background-color: red;
+  color: honeydew
 }
 
 .error {

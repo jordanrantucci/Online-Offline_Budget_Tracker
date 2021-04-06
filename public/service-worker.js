@@ -1,11 +1,11 @@
 const FILES_TO_CACHE = [
     '/',
     '/index.html',
-    '/css/style.css',
-    '/dist/app.bundle.js',
-    '/dist/favorites.bundle.js',
-    '/dist/topic.bundle.js',
-    '/public/icons',
+    '/db.js',
+    '/styles.css',
+    '/manifest.webmanifest',
+    '/icons/icon-192x192.png',
+    '/icons/icon-512x512.png',
     'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
     'https://cdn.jsdelivr.net/npm/chart.js@2.8.0',
 ];
