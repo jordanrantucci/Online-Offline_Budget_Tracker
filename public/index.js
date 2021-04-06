@@ -43,12 +43,14 @@ function populateChart() {
   const reversed = transactions.slice().reverse();
   let sum = 0;
   // create date labels for chart
-  let labels = reversed.map(t => {
-    let date = new Date(t.date);
+
+  const labels = reversed.map(t => {
+    const date = new Date(t.date);
     return `${ date.getMonth() + 1 } /${date.getDate()}/${ date.getFullYear() }`;
   });
+  
   // create incremental values for chart
-  let data = reversed.map(t => {
+  const data = reversed.map(t => {
     sum += parseInt(t.value);
     return sum;
   });
@@ -56,7 +58,9 @@ function populateChart() {
   if (myChart) {
     myChart.destroy();
   }
-  let ctx = document.getElementById("myChart").getContext("2d");
+
+  const ctx = document.getElementById("myChart").getContext("2d");
+
   myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -99,6 +103,7 @@ function sendTransaction(isAdding) {
   populateChart();
   populateTable();
   populateTotal();
+
   // also send to server
   fetch("/api/transaction", {
     method: "POST",
@@ -134,4 +139,4 @@ document.querySelector("#add-btn").onclick = function () {
 };
 document.querySelector("#sub-btn").onclick = function () {
   sendTransaction(false);
-};
+}
