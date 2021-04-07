@@ -48,7 +48,7 @@ none
 See Contact Section
 
 # Future
-In the future I would like to be able to track the workouts longer than a week, perhaps have it set up to store months and see a progress calendar.
+In the future I would like to add more styling options to the budget tracker.
 
 # Contact
 
